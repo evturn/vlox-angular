@@ -1,15 +1,16 @@
 <nav class="navbar navbar-default" role="navigation">
+
   <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
       <span class="sr-only">Toggle navigation</span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="#">Vlox</a>
+    <a class="navbar-brand" href="#">ng-news</a>
   </div>
 
-  <div ng-controller="NavCtrl" class="collapse navbar-collapse" id="navbar-collapse-1">
+  <div ng-controller="NavCtrl" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <form class="navbar-form navbar-left" role="search" ng-submit="submitPost()" ng-show="signedIn()">
       <div class="form-group">
         <input type="text" class="form-control" placeholder="Title" ng-model="post.title">
@@ -19,25 +20,24 @@
       </div>
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
-    <ul class="nav navbar-nav navbar-right" >
-    <li ng-show="signedIn()">
-      <p class="navbar-text">{{ user.profile.username }}</p>
-    </li>
-    <li ng-show="signedIn()">
-      <a ng-href="#/users/{{ user.profile.uid }}">
-        <img ng-src="http://www.gravatar.com/avatar/{{ user.profile.md5_hash }}" class="nav-pic" />
-        {{ currentUser.username }}
-      </a>
-    </li>
-    <li ng-show="signedIn()">
-      <a href="#" ng-click="logout()">Logout</a>
-    </li>
-    <li ng-hide="signedIn()">
-      <a href="#/login">Login</a>
-    </li>
-    <li ng-hide="signedIn()">
-      <a href="#/register">Register</a>
-    </li>
+    <ul class="nav navbar-nav navbar-right" ng-show="signedIn()">
+      <li>
+        <a href="#/users/{{ currentUser.username }}">
+          <img ng-src="http://www.gravatar.com/avatar/{{ currentUser.md5_hash }}" class="nav-pic" />
+          {{ currentUser.username }}
+        </a>
+      </li>
+      <li>
+        <a href="#" ng-click="logout()">Logout</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right" ng-hide="signedIn()">
+      <li>
+        <a href="#/register">Register</a>
+      </li>
+      <li>
+        <a href="#/login">Log In</a>
+      </li>
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>

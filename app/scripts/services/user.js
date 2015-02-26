@@ -1,6 +1,6 @@
 'use strict';
 
-app.factory('User', function ($firebase, FIREBASE_URL, $rootScope/*, Auth*/) {
+app.factory('User', function($firebase, FIREBASE_URL, $rootScope/*, Auth*/) {
   var ref = new Firebase(FIREBASE_URL + 'users');
   var users = $firebase(ref);
 
@@ -34,12 +34,12 @@ app.factory('User', function ($firebase, FIREBASE_URL, $rootScope/*, Auth*/) {
     $rootScope.currentUser = User.findByUsername(username);
   }
 
-  $rootScope.$on('$firebaseSimpleLogin:login', function(e, authUser) {
-    var query = $firebase(ref.startAt(authUser.uid).endAt(authUser.uid));
+  $rootScope.$on('$firebaseSimpleLogin:login', function (e, authUser) {
+      var query = $firebase(ref.startAt(authUser.uid).endAt(authUser.uid));
 
-    query.$on('loaded', function() {
-      setCurrentUser(query.$getIndex()[0]);
-    });
+      query.$on('loaded', function () {
+          setCurrentUser(query.$getIndex()[0]);
+      });
   });
 
   $rootScope.$on('$firebaseSimpleLogin:Logout', function() {
