@@ -28,7 +28,7 @@ var app = angular
         controller: 'PostsCtrl'
       })
       .when('/posts/:postId', {
-        templateUrl: 'views/showposrt.html',
+        templateUrl: 'views/showpost.html',
         controller: 'PostViewCtrl'
       })
       .otherwise({
