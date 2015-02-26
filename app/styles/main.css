@@ -12,6 +12,11 @@ body {
   border-radius: 100px;
 }
 
+li {
+  list-style-type: none;
+  display: inline-block;
+}
+
 
 /* MAIN POSTS PAGE */
 .post {
@@ -85,3 +90,5 @@ body {
   font-size:11px;
   color:#bbb;
 }
+
+
