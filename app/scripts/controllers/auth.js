@@ -6,7 +6,7 @@ app.controller('AuthCtrl', function($scope, $location, Auth) {
 	}
 
 	$scope.login = function() {
-		Auth.login($scope.user).thn(function() {
+		Auth.login($scope.user).then(function() {
 			$location.path('/');
 		});
 	};
