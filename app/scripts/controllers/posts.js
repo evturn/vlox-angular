@@ -15,4 +15,9 @@ app.controller('PostsCtrl', function($scope, Post) {
 		$scope.posts.splice(index, 1);
 	};
 
+	Post.save($scope.post, function(ref) {
+		$scope.posts[ref.name] = $scope.post;
+		$scope.post = {url: 'http://', title: ''};
+	});
+
 });
