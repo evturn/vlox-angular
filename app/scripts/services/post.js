@@ -21,7 +21,7 @@ app.factory('Post',
 				return posts.$remove(post);
 			},
 			comments: function(postId) {
-				return $firebase(ref.child('comments').child(postId)).$asArray();
+			  return $firebase(ref.child('comments').child(postId)).$asArray();
 			}
 		};
 		return Post;
