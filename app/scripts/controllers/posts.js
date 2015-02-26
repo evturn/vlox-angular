@@ -1,6 +1,4 @@
 'use strict';
-/* global app:true */
-/* exported app */
 
 app.controller('PostsCtrl', function($scope, Post) {
 	$scope.posts = [];
