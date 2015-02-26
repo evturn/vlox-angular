@@ -1,3 +1,7 @@
+'use strict';
+/* global app:true */
+/* exported app */
+
 app.controller('PostsCtrl', function($scope) {
 	$scope.posts = [];
 	$scope.post = {url: 'http://', title: ''};
