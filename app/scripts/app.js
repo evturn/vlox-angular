@@ -11,7 +11,7 @@
  */
 
 
-var = angular
+var app = angular
   .module('angNewsApp', [
     'ngAnimate',
     'ngCookies',
